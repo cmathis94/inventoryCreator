@@ -1,0 +1,27 @@
+{
+  "name": "inventorycreator",
+  "version": "1.0.0",
+  "description": "This app will be used to keep track of inventory in an easy way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmathis94/inventoryCreator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmathis94/inventoryCreator/issues"
+  },
+  "homepage": "https://github.com/cmathis94/inventoryCreator#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.6.0",
+    "nodemon": "^2.0.19"
+  }
+}
