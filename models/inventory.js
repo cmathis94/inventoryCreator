@@ -9,4 +9,4 @@ const InventorySchema = new Schema({
   warranty: Number,
 });
 
-module.exports = mongoose.model("Inventory", InventorySchema);
+module.exports = mongoose.model("Inventory", InventorySchemanpm);
