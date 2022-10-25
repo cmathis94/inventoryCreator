@@ -6,7 +6,7 @@ const InventorySchema = new Schema({
   username: String,
   make: String,
   model: String,
-  warranty: Number,
+  warranty: String,
 });
 
-module.exports = mongoose.model("Inventory", InventorySchemanpm);
+module.exports = mongoose.model("Inventory", InventorySchema);

@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const inventory = require("./models/inventory");
+const Inventory = require("./models/inventory");
 const exp = require("constants");
 const methodOverride = require("method-override");
 
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/inventories", async (req, res) => {
-  const inventories = await inventory.find({});
+  const inventories = await Inventory.find({});
   res.render("inventories/index.ejs", { inventories });
 });
 
@@ -35,24 +35,24 @@ app.get("/inventories/new", (req, res) => {
 });
 
 app.post("/inventories", async (req, res) => {
-  const inventory = new inventory(req.body.inventory);
+  const inventory = new Inventory(req.body.inventory);
   await inventory.save();
   res.redirect(`/inventories/${inventory._id}`);
 });
 
 app.get("/inventories/:id", async (req, res) => {
-  const inventory = await inventory.findById(req.params.id);
+  const inventory = await Inventory.findById(req.params.id);
   res.render("inventories/show", { inventory });
 });
 
 app.get("/inventories/:id/edit", async (req, res) => {
-  const inventory = await inventory.findById(req.params.id);
+  const inventory = await Inventory.findById(req.params.id);
   res.render("inventories/edit", { inventory });
 });
 
 app.put("/inventories/:id", async (req, res) => {
   const { id } = req.params;
-  const inventory = await inventory.findByIdAndUpdate(id, {
+  const inventory = await Inventory.findByIdAndUpdate(id, {
     ...req.body.inventory,
   });
   res.redirect(`/inventories/${inventory._id}`);
@@ -60,7 +60,7 @@ app.put("/inventories/:id", async (req, res) => {
 
 app.delete("/inventories/:id", async (req, res) => {
   const { id } = req.params;
-  const deletedinventory = await inventory.findByIdAndDelete(id);
+  const deletedinventory = await Inventory.findByIdAndDelete(id);
   res.redirect("/inventories");
 });
 

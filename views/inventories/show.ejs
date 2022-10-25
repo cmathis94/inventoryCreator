@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show</title>
+  </head>
+
+  <body>
+    <h1>
+      <% for(let i = 0; i < 2; i++) { inventory.username.charAt(i).toUpperCase()
+      } %>
+    </h1>
+    <div>Device Name: ERG-<%= inventory.serial.toUpperCase() %></div>
+    <div>Make: <%= inventory.make.charAt(0).toUpperCase() %></div>
+    <div>Model: <%= inventory.model.charAt(0).toUpperCase() %></div>
+    <br />
+    <form
+      action="/inventories/<%=inventory._id %>?_method=delete"
+      method="post"
+    >
+      <button>Delete</button>
+    </form>
+
+    <a href="/inventories/<%= inventory._id %>/edit">Edit</a>
+    <footer>
+      <a href="/inventories">Back</a>
+    </footer>
+  </body>
+</html>

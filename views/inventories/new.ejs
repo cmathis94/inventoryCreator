@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Inventory</title>
+  </head>
+
+  <body>
+    <h1>New Inventory Item</h1>
+
+    <form action="/inventories" method="post">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="inventory[username]" />
+      </div>
+      <div>
+        <label for="serial">Serial Number:</label>
+        <input type="text" id="serial" name="inventory[serial]" />
+      </div>
+      <div>
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="inventory[make]" />
+      </div>
+      <div>
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="inventory[model]" />
+      </div>
+      <button>Add Item</button>
+    </form>
+    <a href="/inventories">Back</a>
+  </body>
+</html>
