@@ -1,54 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Device</title>
-  </head>
+<%- layout('layouts/boilerplate') %>
+<h1>Edit Device</h1>
 
-  <body>
-    <h1>Edit Device</h1>
-
-    <form action="/inventories/<%=inventory._id%>?_method=put" method="post">
-      <div>
-        <label for="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="inventory[username]"
-          value="<%=inventory.username%> "
-        />
-      </div>
-      <div>
-        <label for="serial">Serial Number:</label>
-        <input
-          type="text"
-          id="serial"
-          name="inventory[serial]"
-          value="<%=inventory.serial%> "
-        />
-      </div>
-      <div>
-        <label for="make">Make:</label>
-        <input
-          type="text"
-          id="make"
-          name="inventory[make]"
-          value="<%=inventory.make%> "
-        />
-      </div>
-      <div>
-        <label for="model">Model:</label>
-        <input
-          type="text"
-          id="model"
-          name="inventory[model]"
-          value="<%=inventory.model%> "
-        />
-      </div>
-      <button>Save Inventory</button>
-    </form>
-    <a href="/inventories/<%= inventory._id %> ">Back</a>
-  </body>
-</html>
+<form action="/inventories/<%=inventory._id%>?_method=put" method="post">
+  <div>
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="inventory[username]"
+      value="<%=inventory.username%> "
+    />
+  </div>
+  <div>
+    <label for="serial">Serial Number:</label>
+    <input
+      type="text"
+      id="serial"
+      name="inventory[serial]"
+      value="<%=inventory.serial%> "
+    />
+  </div>
+  <div>
+    <label for="make">Make:</label>
+    <input
+      type="text"
+      id="make"
+      name="inventory[make]"
+      value="<%=inventory.make%> "
+    />
+  </div>
+  <div>
+    <label for="model">Model:</label>
+    <input
+      type="text"
+      id="model"
+      name="inventory[model]"
+      value="<%=inventory.model%> "
+    />
+  </div>
+  <div>
+    <label for="warranty">Warranty:</label>
+    <input
+      type="text"
+      id="warranty"
+      name="inventory[warranty]"
+      value="<%=inventory.warranty%> "
+    />
+  </div>
+  <button>Save Inventory</button>
+</form>
+<a href="/inventories/<%= inventory._id %> ">Back</a>

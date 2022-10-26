@@ -1,38 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Show</title>
-  </head>
+<%- layout('layouts/boilerplate') %>
 
-  <body>
-    <h1>
-      <%= inventory.username.charAt(0).toUpperCase() +
-      inventory.username.charAt(1).toUpperCase() + inventory.username.slice(2)
-      %>
-    </h1>
-    <div>Device Name: ERG-<%= inventory.serial.toUpperCase() %></div>
-    <div>
-      Make: <%= inventory.make.charAt(0).toUpperCase() + inventory.make.slice(1)
-      %>
-    </div>
-    <div>
-      Model: <%= inventory.model.charAt(0).toUpperCase() +
-      inventory.model.slice(1) %>
-    </div>
-    <br />
-    <form
-      action="/inventories/<%=inventory._id %>?_method=delete"
-      method="post"
-    >
-      <button>Delete</button>
-    </form>
+<h1>
+  <%= inventory.username.charAt(0).toUpperCase() +
+  inventory.username.charAt(1).toUpperCase() + inventory.username.slice(2) %>
+</h1>
+<div>Device Name: ERG-<%= inventory.serial.toUpperCase() %></div>
+<div>
+  Make: <%= inventory.make.charAt(0).toUpperCase() + inventory.make.slice(1) %>
+</div>
+<div>
+  Model: <%= inventory.model.charAt(0).toUpperCase() + inventory.model.slice(1)
+  %>
+</div>
+<div>Warranty: <%= inventory.warranty %></div>
+<br />
+<form action="/inventories/<%=inventory._id %>?_method=delete" method="post">
+  <button>Delete</button>
+</form>
 
-    <a href="/inventories/<%= inventory._id %>/edit">Edit</a>
-    <footer>
-      <a href="/inventories">Back</a>
-    </footer>
-  </body>
-</html>
+<a href="/inventories/<%= inventory._id %>/edit">Edit</a>
+<footer>
+  <a href="/inventories">Back</a>
+</footer>

@@ -1,15 +1,23 @@
-<h1>ERG Inventory</h1>
-<div>
-  <a href="/inventories/new">New Item</a>
-</div>
-<div>
-  <ul>
-    <% for (let inventory of inventories){ %>
-    <li>
-      <a href="/inventories/<%= inventory._id %> ">
-        ERG-<%= inventory.serial.toUpperCase() %>
-      </a>
-    </li>
-    <% } %>
-  </ul>
+<%- layout('layouts/boilerplate') %>
+<div class="row justify-content-center">
+  <div class="col-3">
+    <h3>Device Name:</h3>
+    <ol>
+      <% for (let inventory of inventories){ %>
+      <li>
+        <a href="/inventories/<%= inventory._id %> ">
+          ERG-<%= inventory.serial.toUpperCase() %>
+        </a>
+      </li>
+      <% } %>
+    </ol>
+  </div>
+  <div class="col-3">
+    <h3>Warranty:</h3>
+    <ul>
+      <% for (let inventory of inventories){ %>
+      <li><%= inventory.warranty %></li>
+      <% } %>
+    </ul>
+  </div>
 </div>
