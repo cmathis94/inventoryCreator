@@ -9,12 +9,19 @@
 
   <body>
     <h1>
-      <% for(let i = 0; i < 2; i++) { inventory.username.charAt(i).toUpperCase()
-      } %>
+      <%= inventory.username.charAt(0).toUpperCase() +
+      inventory.username.charAt(1).toUpperCase() + inventory.username.slice(2)
+      %>
     </h1>
     <div>Device Name: ERG-<%= inventory.serial.toUpperCase() %></div>
-    <div>Make: <%= inventory.make.charAt(0).toUpperCase() %></div>
-    <div>Model: <%= inventory.model.charAt(0).toUpperCase() %></div>
+    <div>
+      Make: <%= inventory.make.charAt(0).toUpperCase() + inventory.make.slice(1)
+      %>
+    </div>
+    <div>
+      Model: <%= inventory.model.charAt(0).toUpperCase() +
+      inventory.model.slice(1) %>
+    </div>
     <br />
     <form
       action="/inventories/<%=inventory._id %>?_method=delete"
