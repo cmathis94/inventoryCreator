@@ -1,28 +1,63 @@
 <%- layout('layouts/boilerplate') %>
 
-<h1>New Inventory Item</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col text-center">
+      <h1>New Inventory Item</h1>
+    </div>
+  </div>
 
-<form action="/inventories" method="post">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="inventory[username]" />
+  <form action="/inventories" method="post">
+    <div class="row justify-content-center">
+      <div class="col-2 offset-2">
+        <label for="username">Username:</label>
+      </div>
+      <div class="col-4">
+        <input type="text" id="username" name="inventory[username]" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2 offset-2">
+        <label for="serial">Serial Number:</label>
+      </div>
+      <div class="col-4">
+        <input type="text" id="serial" name="inventory[serial]" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2 offset-2">
+        <label for="make">Make:</label>
+      </div>
+      <div class="col-4">
+        <input type="text" id="make" name="inventory[make]" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2 offset-2">
+        <label for="model">Model:</label>
+      </div>
+      <div class="col-4">
+        <input type="text" id="model" name="inventory[model]" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2 offset-2">
+        <label for="warranty">Warranty:</label>
+      </div>
+      <div class="col-4">
+        <input type="text" id="warranty" name="inventory[warranty]" />
+      </div>
+    </div>
+    <br />
+    <div class="row justify-content-center">
+      <div class="col-2 text-center">
+        <button>Add Item</button>
+      </div>
+    </div>
+  </form>
+  <div class="row justify-content-center">
+    <div class="col-2 text-center">
+      <a href="/inventories">Back</a>
+    </div>
   </div>
-  <div>
-    <label for="serial">Serial Number:</label>
-    <input type="text" id="serial" name="inventory[serial]" />
-  </div>
-  <div>
-    <label for="make">Make:</label>
-    <input type="text" id="make" name="inventory[make]" />
-  </div>
-  <div>
-    <label for="model">Model:</label>
-    <input type="text" id="model" name="inventory[model]" />
-  </div>
-  <div>
-    <label for="warranty">Warranty:</label>
-    <input type="text" id="warranty" name="inventory[warranty]" />
-  </div>
-  <button>Add Item</button>
-</form>
-<a href="/inventories">Back</a>
+</div>
