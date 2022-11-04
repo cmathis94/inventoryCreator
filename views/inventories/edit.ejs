@@ -1,87 +1,96 @@
 <%- layout('layouts/boilerplate') %>
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col text-center">
+    <div class="col text-center mb-4">
       <h1>Edit Device</h1>
     </div>
   </div>
 
   <form action="/inventories/<%=inventory._id%>?_method=put" method="post">
     <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="username">Username:</label>
+      <div class="col-2 my-2">
+        <label for="username" class="form-label">Username:</label>
       </div>
-      <div class="col-4">
+      <div class="col-2">
         <input
           type="text"
           id="username"
           name="inventory[username]"
           value="<%=inventory.username%> "
+          class="form-control"
         />
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="serial">Serial Number:</label>
+      <div class="col-2 my-2">
+        <label for="serial" class="form-label">Serial Number:</label>
       </div>
-      <div class="col-4">
+      <div class="col-2">
         <input
           type="text"
           id="serial"
           name="inventory[serial]"
           value="<%=inventory.serial%> "
+          class="form-control"
         />
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="make">Make:</label>
+      <div class="col-2 my-2">
+        <label for="make" class="form-label">Make:</label>
       </div>
-      <div class="col-4">
+      <div class="col-2">
         <input
           type="text"
           id="make"
           name="inventory[make]"
           value="<%=inventory.make%> "
+          class="form-control"
         />
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="model">Model:</label>
+      <div class="col-2 my-2">
+        <label for="model" class="form-label">Model:</label>
       </div>
-      <div class="col-4">
+      <div class="col-2">
         <input
           type="text"
           id="model"
           name="inventory[model]"
           value="<%=inventory.model%> "
+          class="form-control"
         />
       </div>
     </div>
     <div class="row justify-content-center mb-6">
-      <div class="col-2 offset-2">
+      <div class="col-2 my-2">
         <label for="warranty">Warranty:</label>
       </div>
-      <div class="col-4">
+      <div class="col-2">
         <input
           type="text"
           id="warranty"
           name="inventory[warranty]"
           value="<%=inventory.warranty%> "
+          class="form-control"
         />
       </div>
     </div>
     <br />
     <div class="row justify-content-center">
       <div class="col-2 text-center">
-        <button>Save Inventory</button>
+        <button class="btn btn-secondary">Save Inventory</button>
       </div>
     </div>
   </form>
   <div class="row justify-content-center">
     <div class="col-2 text-center">
-      <a href="/inventories/<%= inventory._id %> ">Back</a>
+      <button type="button" class="btn btn-link">
+        <a href="/inventories/<%= inventory._id %> " class="link-primary"
+          >Back</a
+        >
+      </button>
     </div>
   </div>
 </div>

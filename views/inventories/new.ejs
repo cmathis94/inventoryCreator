@@ -2,62 +2,89 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col text-center">
+    <div class="col text-center mb-4">
       <h1>New Inventory Item</h1>
     </div>
   </div>
 
   <form action="/inventories" method="post">
     <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="username">Username:</label>
+      <div class="col-2 my-2">
+        <label for="username" class="form-label">Username:</label>
       </div>
-      <div class="col-4">
-        <input type="text" id="username" name="inventory[username]" />
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="serial">Serial Number:</label>
-      </div>
-      <div class="col-4">
-        <input type="text" id="serial" name="inventory[serial]" />
+      <div class="col-2">
+        <input
+          type="text"
+          id="username"
+          name="inventory[username]"
+          class="form-control"
+        />
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="make">Make:</label>
+      <div class="col-2 my-2">
+        <label for="serial" class="form-label">Serial Number:</label>
       </div>
-      <div class="col-4">
-        <input type="text" id="make" name="inventory[make]" />
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="model">Model:</label>
-      </div>
-      <div class="col-4">
-        <input type="text" id="model" name="inventory[model]" />
+      <div class="col-2">
+        <input
+          type="text"
+          id="serial"
+          name="inventory[serial]"
+          class="form-control"
+        />
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-2 offset-2">
-        <label for="warranty">Warranty:</label>
+      <div class="col-2 my-2">
+        <label for="make" class="form-label">Make:</label>
       </div>
-      <div class="col-4">
-        <input type="text" id="warranty" name="inventory[warranty]" />
+      <div class="col-2">
+        <input
+          type="text"
+          id="make"
+          name="inventory[make]"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2 my-2">
+        <label for="model" class="form-label">Model:</label>
+      </div>
+      <div class="col-2">
+        <input
+          type="text"
+          id="model"
+          name="inventory[model]"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2 my-2">
+        <label for="warranty" class="form-label">Warranty:</label>
+      </div>
+      <div class="col-2">
+        <input
+          type="text"
+          id="warranty"
+          name="inventory[warranty]"
+          class="form-control"
+        />
       </div>
     </div>
     <br />
     <div class="row justify-content-center">
       <div class="col-2 text-center">
-        <button>Add Item</button>
+        <button class="btn btn-secondary">Add Item</button>
       </div>
     </div>
   </form>
   <div class="row justify-content-center">
     <div class="col-2 text-center">
-      <a href="/inventories">Back</a>
+      <button type="button" class="btn btn-link">
+        <a href="/inventories" class="link-primary">Back</a>
+      </button>
     </div>
   </div>
 </div>
