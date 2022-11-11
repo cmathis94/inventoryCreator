@@ -1,61 +1,64 @@
 <%- layout('layouts/boilerplate') %>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col text-center">
-      <h1>
-        <%= inventory.username.charAt(0).toUpperCase() +
-        inventory.username.charAt(1).toUpperCase() + inventory.username.slice(2)
-        %>
-      </h1>
-    </div>
-  </div>
-  <div class="mb-4">
+<div class="row h-100 justify-content-center align-items-center">
+  <div class="col-12">
     <div class="row justify-content-center">
-      <div class="col-2 offset-2">Device Name:</div>
-      <div class="col-4">ERG-<%= inventory.serial.toUpperCase() %></div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-2 offset-2">Make:</div>
-      <div class="col-4">
-        <%= inventory.make.charAt(0).toUpperCase() + inventory.make.slice(1) %>
+      <div class="col text-center">
+        <h1>
+          <%= inventory.username.charAt(0).toUpperCase() +
+          inventory.username.charAt(1).toUpperCase() +
+          inventory.username.slice(2) %>
+        </h1>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-2 offset-2">Model:</div>
-      <div class="col-4">
-        <%= inventory.model.charAt(0).toUpperCase() + inventory.model.slice(1)
-        %>
+    <div class="mb-4">
+      <div class="row justify-content-center">
+        <div class="col-2 offset-2">Device Name:</div>
+        <div class="col-4">ERG-<%= inventory.serial.toUpperCase() %></div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-2 offset-2">Make:</div>
+        <div class="col-4">
+          <%= inventory.make.charAt(0).toUpperCase() + inventory.make.slice(1)
+          %>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-2 offset-2">Model:</div>
+        <div class="col-4">
+          <%= inventory.model.charAt(0).toUpperCase() + inventory.model.slice(1)
+          %>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-2 offset-2">Warranty:</div>
+        <div class="col-4"><%= inventory.warranty %></div>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-2 offset-2">Warranty:</div>
-      <div class="col-4"><%= inventory.warranty %></div>
-    </div>
-  </div>
-  <div class="mb-4">
-    <div class="row justify-content-center">
-      <div class="col-1">
-        <form
-          action="/inventories/<%=inventory._id %>?_method=delete"
-          method="post"
-        >
-          <button class="btn btn-secondary">Delete</button>
-        </form>
-      </div>
-      <div class="col-1">
-        <button class="btn btn-link">
-          <a
-            href="/inventories/<%= inventory._id %>/edit"
-            class="link-secondary"
-            >Edit</a
+    <div class="mb-4">
+      <div class="row justify-content-center">
+        <div class="col-1">
+          <form
+            action="/inventories/<%=inventory._id %>?_method=delete"
+            method="post"
           >
-        </button>
+            <button class="btn btn-secondary">Delete</button>
+          </form>
+        </div>
+        <div class="col-1">
+          <button class="btn btn-link">
+            <a
+              href="/inventories/<%= inventory._id %>/edit"
+              class="link-secondary"
+              >Edit</a
+            >
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row justify-content-center m-6">
-    <div class="col-2 text-center">
-      <a href="/inventories" class="link-primary">Back</a>
+    <div class="row justify-content-center m-6">
+      <div class="col-2 text-center">
+        <a href="/inventories" class="link-primary">Back</a>
+      </div>
     </div>
   </div>
 </div>
